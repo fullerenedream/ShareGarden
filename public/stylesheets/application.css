@@ -7,8 +7,46 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
 }
 
 .logo_font{
+    font-size: 2.25em;
     font-family: 'Poiret One', Arial, sans-serif;
+}
+
+#main{
+    margin-top: 80px;
+}
+
+.btn .outline {
+    background: none;
+    padding: 12px 22px;
+    border-radius: 0;
+}
+
+.btn-primary.outline {
+    border: 2px solid #009688;
+    color: #009688;
+    background-image: none;
+    background: none;
+    border-radius: 0;
+    text-shadow: none;
+    box-shadow: none;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.btn-primary .outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+    background-image: none;
+    border-radius: 0;
+}
+.btn-primary .outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+    background-image: none;
+    border-radius: 0;
 }
