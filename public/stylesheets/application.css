@@ -76,4 +76,25 @@ body{
 
 .container-fluid .jumbotron h1{
     line-height: 300px;
+    color: #fafafa;
+}
+
+.listing-box{
+    background: #f6f6f6;
+    box-shadow:  0px 1px 1px #CCCCCC;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.listing-box img{
+    max-height: 75%;
+    min-width: 100%;
+    box-shadow: 0px 1px 1px #333333;
+}
+
+.listing-box h3{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: 100;
+    font-size: 1.5em;
 }
