@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
 
-  <!-- CSS Files (order matters) -->
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"
-  <link rel="stylesheet" href="/stylesheets/application.css">
+    <!-- CSS Files (order matters) -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"
+    <link rel="stylesheet" href="/stylesheets/application.css">
 
 
-  <title>ShareGarden</title>
-</head>
+    <title>ShareGarden</title>
+  </head>
 <body>
   <%= yield %>
 
-  <!-- JS Files (at the end for faster loading) -->
+  <!-- JS Files (at the end for faster loading, ORDER MATTERS) -->
   <script src="/javascript/jquery-2.2.2.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
   <script src="/javascript/application.js"></script>
 
 </body>
