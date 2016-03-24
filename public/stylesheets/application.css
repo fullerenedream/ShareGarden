@@ -43,3 +43,24 @@ body{
     border-radius: 0;
     background: none #009688;
 }
+
+.invisible-btn{
+    background: none;
+    color: #333333;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+
+@media (min-width: 768px){
+    .search_bar{
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .search_bar{
+        min-width: 600px;
+    }
+    
+}
