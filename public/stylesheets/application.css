@@ -16,7 +16,7 @@ body{
 }
 
 #main{
-    margin-top: 80px;
+    margin-top: 380px;
 }
 
 .btn .outline {
@@ -63,4 +63,17 @@ body{
         min-width: 500px;
     }
     
+}
+
+.container-fluid .jumbotron{
+    padding: 0;
+    position: absolute;
+    left: 0;
+    height: 300px;
+    background: url(https://lifeintheville.files.wordpress.com/2012/06/morse-kelley-garden.jpg) center;
+    background-size: 100%;
+}
+
+.container-fluid .jumbotron h1{
+    line-height: 300px;
 }
