@@ -1,0 +1,40 @@
+<form method="post" action="/spaces" enctype='multipart/form-data'>
+  <div>
+    <label>Plot Area M<SUP>2</SUP>:</label>
+    <input type="float" name="square_meters" value="<%= @space && @space.square_meters %>">
+  </div><br>
+  <div>
+    <label>Unit:</label>
+    <input type="text" name="unit_number" value="<%= @space && @space.unit_number %>">
+  </div><br>
+  <div>
+    <label>Street Address:</label>
+    <input type="text" name="street_address" value="<%= @space && @space.street_address %>">
+  </div><br>
+  <div>
+    <label>Province:</label>
+    <input type="text" name="province" value="<%= @space && @space.province %>">
+  </div><br>
+  <div>
+    <label>Postal Code:</label>
+    <input type="text" name="postal_code" value="<%= @space && @space.postal_code %>">
+  </div><br>
+  <div>
+    <label>Country:</label>
+    <input type="text" name="country" value="<%= @space && @space.country %>">
+  </div><br>
+  <div>
+    <label>Description:</label>
+    <input type="text" name="description" value="<%= @space && @space.description %>">
+  </div><br>
+  <div>
+    <input type="radio" name="outdoors" value="false" <%= (@space && (@space.outdoors == false) ? "checked" : "" ) %> >Indoors
+    <input type="radio" name="outdoors" value="true" <%= (@space && (@space.outdoors == true) ? "checked" : "" ) %> >Outdoors
+  </div><br>
+  <div>
+    <input type="file" name="uploaded_picture" size="2000000">
+  </div><br>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
