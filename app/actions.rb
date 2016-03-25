@@ -6,16 +6,12 @@ end
 # CALLED THE DIRECTORY SPACES FOR NOW, CHANGE LATER WHEN WE COME UP WITH A NAME
 # ALSO CALLED THE INNER DIRECTORY ID, CHANGE LATER WHEN WE COME UP WITH A NAME
 # Spaces GET
-get '/spaces' do
-  @spaces = Space.all
-  erb :'spaces/index'
-end
 
 # Spaces New POST
 post '/spaces' do
   @random_name = rand(1000000).to_s 
   @uploaded_file = params[:uploaded_picture]
-  File.open('public/uploads/' + @random_name, "w") do |f|
+  File.open('./public/uploads/' + @random_name +".jpg", "w") do |f|
     f.write(@uploaded_file[:tempfile].read)
   end
   @space = Space.new(
@@ -25,13 +21,14 @@ post '/spaces' do
     postal_code: params[:postal_code],
     city: params[:city],
     country: params[:country],
-    square_meters: params[:square_meters],
+    square_meters: params[:square_meters].to_f,
     outdoors: params[:outdoors]=="true",
     description: params[:description],
     main_photo: '/uploads/' + @random_name
   )
+  binding.pry
   if @space.save
-    redirect '/spaces'
+    redirect '/'
   else
     erb :'spaces/new'
   end
@@ -46,5 +43,5 @@ end
 #GET ID
 get '/spaces/:id' do
   @space = Space.find params[:id]
-  erb :'show'
+  erb :'spaces/show'
 end
