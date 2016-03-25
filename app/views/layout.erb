@@ -44,7 +44,12 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right text-center">
         <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/post">List your space</a>
-        <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/post">Login</a>
+        <!--/. DEFAULT ACTION WHEN CLICKING LOGIN BUTTON IS TO LOG IN AS USER_ID 1 -->
+        <% if current_user.nil? %>
+          <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/users/1/login">Login</a>
+        <% else %>
+          <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/logout">Logout</a>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
 
