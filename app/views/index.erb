@@ -12,10 +12,48 @@
 <div id="main">
   <div class="container-fluid">
 
-    <div class="row">
-
-      <div class="filter-bar">test</div>
-
+    <!-- Filter Options -->
+    <div class="row space-bottom">
+      <div class="filter-bar">
+        <form class="form-inline" action="/spaces">
+          <div class="col-md-1 text-center">
+            <p>Search by:</p>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group text-center">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city">
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="form-group">
+              <label for="province">Province/State</label>
+              <input type="text" class="form-control" id="province">
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" class="form-control" id="country">
+            </div>
+          </div>
+          <div class="col-md-1 text-center">
+            <div class="form-group">
+              <label for="area">Plot Area</label>
+              <input type="text" size="5" class="form-control" id="area">
+            </div>
+          </div>
+          <div class="col-md-2 text-center mid-75">
+            <div class="form-group" id="radioset">
+              <input type="radio" id="radio1" name="radio"><label for="radio1">Indoor</label>
+              <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Outdoor</label>
+            </div>
+          </div>
+          <div class="col-md-1 text-center mid-75">
+              <button class="btn btn-primary outline" type="submit">Filter</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <div class="row">
