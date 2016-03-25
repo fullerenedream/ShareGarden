@@ -1,3 +1,12 @@
+helpers do
+  def current_user
+    if session[:user_id]
+      User.find(session[:user_id])
+    end
+  end
+end
+
+
 # Homepage (Root path)
 get '/' do
   erb :index
@@ -54,4 +63,15 @@ end
 get '/spaces/:id' do
   @space = Space.find params[:id]
   erb :'spaces/show'
+end
+
+#FAKE LOGIN BY USER ID
+get '/users/:id/login' do
+  session[:user_id] = params[:id]
+  redirect '/'
+end
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
 end
