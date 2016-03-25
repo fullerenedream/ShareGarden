@@ -164,3 +164,7 @@ body{
 .mid-75{
     line-height: 75px;
 }
+
+#description{
+    height: 200px;
+}
