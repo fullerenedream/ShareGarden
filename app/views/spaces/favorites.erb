@@ -1,0 +1,17 @@
+<% @user.each do |space| %>
+  <div class="space">
+    <h3><a href="/spaces/<%= space.id %>"><%= space.user.email %></a></h3>
+    <p>
+      <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
+    </p>
+    <p>
+      Garden Space in M<SUP>2</SUP>: <%= @space.square_meters %>
+    </p>
+    <p>
+      <%= space.description %>
+    </p>
+    <img src="/uploads/<%=@space.main_photo%>">
+    <hr>
+  </div>
+<% end %>
+<a href="/spaces">Back to Spaces</a>
