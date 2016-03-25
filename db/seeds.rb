@@ -1,5 +1,3 @@
-# Product.create(name: "Product ##{i}", description: "A product.")
-
 User.create(email: "gwendolyn@gardens.ca")
 User.create(email: "urbanfarmer@goodearth.com")
 User.create(email: "timothy@mail.com")
