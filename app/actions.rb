@@ -35,6 +35,7 @@ post '/spaces' do
     f.write(@uploaded_file[:tempfile].read)
   end
   @space = Space.new(
+    user: current_user,
     unit_number: params[:unit_number],
     street_address: params[:street_address],
     province: params[:province],
