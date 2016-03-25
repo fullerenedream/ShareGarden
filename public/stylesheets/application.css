@@ -23,6 +23,10 @@ body{
     padding: 0;
 }
 
+.space-bottom{
+    margin-bottom: 20px;
+}
+
 .btn .outline {
     background: none;
     padding: 12px 22px;
@@ -30,7 +34,7 @@ body{
 }
 
 .btn-primary.outline {
-    border: 2px solid #009688;
+    border: 2px solid;
     color: #009688;
     background: none;
     border-radius: 0;
@@ -137,8 +141,26 @@ body{
 }
 
 .filter-bar{
-    height: 75px;
+    padding-top: 5px;
+    min-height: 75px;
+    height: auto;
     width: 100%;
     box-shadow: 0px 1px 1px #CCCCCC;
 }
 
+.filter-bar label{
+    font-size: 10px;
+}
+
+.filter-bar p{
+    font-weight: 900;
+    line-height: 75px;
+}
+
+#radioset label{
+    font-size: 15px;
+}
+
+.mid-75{
+    line-height: 75px;
+}

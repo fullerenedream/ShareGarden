@@ -1,7 +1,16 @@
 $(document).ready(function() {
-/*
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-    var width = $('body').css('width')
-    $('.jumbotron').css('width', width)
-*/
+
+    $( "#button" ).button();
+    $( "#radioset" ).buttonset();
+
+    // Hover states on the static widgets
+    $( "#dialog-link, #icons li" ).hover(
+        function() {
+            $( this ).addClass( "ui-state-hover" );
+        },
+        function() {
+            $( this ).removeClass( "ui-state-hover" );
+        }
+    );
+
 });
