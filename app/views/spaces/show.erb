@@ -1,5 +1,4 @@
-<h1><%= @user.email %></h1>
-
+<%= @space.user.try(:email) %>
 <p>
   Garden Space in M<SUP>2</SUP>: <%= @space.square_meters %>
 </p>
@@ -12,7 +11,7 @@
   <%= @space.description %>
 </p>
 
-<img src="/uploads/<%=@space.main_photo%>">
+<img src="..<%=@space.main_photo%>.jpg">
 
 <hr/>
-<a href="/spaces">Back to Spaces</a>
+<a href="/">Back to Spaces</a>
