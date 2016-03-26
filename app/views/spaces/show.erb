@@ -1,8 +1,10 @@
-<%= @space.user.try(:email) %>
+<h3><a href="/spaces/<%= @space.id %>"><%= @space.user.email %></a></h3>
+<p>
+  <%= @space.user.username %>
+</p>
 <p>
   Garden Space in m<SUP>2</SUP>: <%= @space.square_meters %>
 </p>
-
 <p>
   <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
 </p>
