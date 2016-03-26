@@ -76,55 +76,55 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">New Listing</h4>
         </div>
-        <form method="post" action="/spaces" enctype='multipart/form-data'>
+        <form data-toggle="validator" role="form" method="post" action="/spaces" enctype='multipart/form-data'>
           <div class="modal-body">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="square_meters">Plot Area M<SUP>2</SUP>:</label>
-                  <input class="form-control" id="square_meters" type="float" name="square_meters" value="<%= @space && @space.square_meters %>">
+                  <input class="form-control" id="square_meters" type="float" name="square_meters" value="<%= @space && @space.square_meters %>"required>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="unit_number">Unit Number</label>
-                  <input class="form-control" id="unit_number" type="text" name="unit_number" value="<%= @space && @space.unit_number %>">
+                  <input class="form-control" id="unit_number" type="text" name="unit_number" value="<%= @space && @space.unit_number %>"required>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="street_address">Street Address</label>
-                  <input class="form-control" id="street_address" type="text" name="street_address" value="<%= @space && @space.street_address %>">
+                  <input class="form-control" id="street_address" type="text" name="street_address" value="<%= @space && @space.street_address %>"required>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="city">City</label>
-                  <input class="form-control" id="city" type="text" name="city" value="<%= @space && @space.city %>">
+                  <input class="form-control" id="city" type="text" name="city" value="<%= @space && @space.city %>"required>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="province">Province/State</label>
-                  <input class="form-control" type="text" id="province" name="province" value="<%= @space && @space.province %>">
+                  <input class="form-control" type="text" id="province" name="province" value="<%= @space && @space.province %>"required>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="postal_code">Postal Code</label>
-                  <input class="form-control" type="text" id="postal_code" name="postal_code" value="<%= @space && @space.postal_code %>">
+                  <input class="form-control" type="text" id="postal_code" name="postal_code" value="<%= @space && @space.postal_code %>"required>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                   <label for="country">Country:</label>
-                  <input class="form-control" type="text" id="country" name="country" value="<%= @space && @space.country %>">
+                  <input class="form-control" type="text" id="country" name="country" value="<%= @space && @space.country %>"required>
                 </div>
               </div>
               <div class="col-md-6">
@@ -138,13 +138,12 @@
               <label for="description">Description</label>
               <textarea class="form-control" id="description" name="description" value="<%= @space && @space.description %>"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
               <label for="upload">Upload Picture</label>
-              <input class="form-control" id="upload" type="file" name="uploaded_picture" size="2000000">
+              <input class="form-control" id="upload" type="file" name="uploaded_picture" size="2000000"required>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn btn-primary">Post</button>
           </div>
         </form>
