@@ -1,8 +1,8 @@
-user1 = User.create(email: "gwendolyn@gardens.ca")
-user2 = User.create(email: "urbanfarmer@goodearth.com")
-user3 = User.create(email: "timothy@mail.com")
-user4 = User.create(email: "edibleflowers@mail.com")
-user5 = User.create(email: "annlovesplants@greenthumb.ca")
+user1 = User.create(username: "Wendy A", email: "gwendolyn@gardens.ca")
+user2 = User.create(username: "urbanfarmer", email: "urbanfarmer@goodearth.com")
+user3 = User.create(username: "Tim Batten", email: "timothy@mail.com")
+user4 = User.create(username: "cynthia_grows", email: "edibleflowers@mail.com")
+user5 = User.create(username: "Annabelle Crumb", email: "annlovesplants@greenthumb.ca")
 
 Favorite.create(user_id: 1, space_id: 2)
 Favorite.create(user_id: 1, space_id: 4)
