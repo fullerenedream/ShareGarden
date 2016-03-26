@@ -3,7 +3,7 @@
   <div class="space">
     <h3><a href="/spaces/<%= @space.id %>"><%= @space.user.email %></a></h3>
     <p>
-      <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
+      <%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %> <%= space.country %> <%= space.postal_code %>
     </p>
     <p>
       Garden Plot Area in m<SUP>2</SUP>: <%= @space.square_meters %>
@@ -11,7 +11,7 @@
     <p>
       <%= @space.description %>
     </p>
-    <img src="/uploads/<%=@space.main_photo%>">
+    <img src="..<%=space.main_photo + '.jpg'%>">
     <hr>
   </div>
 <% end %>

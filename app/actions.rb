@@ -16,6 +16,17 @@ end
 # ALSO CALLED THE INNER DIRECTORY ID, CHANGE LATER WHEN WE COME UP WITH A NAME
 # Spaces GET
 
+# Spaces GET
+get '/spaces' do
+  if params[:search]
+    search_term = params[:search]
+    @spaces = Space.where("unit_number LIKE ? OR street_address LIKE ? OR province LIKE ? OR postal_code LIKE ? OR city LIKE ? OR country LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
+  else
+    @spaces = Space.all
+  end
+  erb :'spaces/index'
+end
+
 # Spaces New POST
 post '/spaces' do
   @random_name = rand(1000000).to_s 
@@ -24,6 +35,7 @@ post '/spaces' do
     f.write(@uploaded_file[:tempfile].read)
   end
   @space = Space.new(
+    user: current_user,
     unit_number: params[:unit_number],
     street_address: params[:street_address],
     province: params[:province],
@@ -35,7 +47,6 @@ post '/spaces' do
     description: params[:description],
     main_photo: '/uploads/' + @random_name
   )
-  binding.pry
   if @space.save
     redirect '/'
   else
