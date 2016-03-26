@@ -9,6 +9,7 @@ end
 
 # Homepage (Root path)
 get '/' do
+  @spaces = Space.all
   erb :index
 end
 
