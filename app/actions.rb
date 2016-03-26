@@ -44,9 +44,13 @@ post '/spaces' do
 end
 
 #GET NEW
-
 get '/spaces/new' do
   erb :'spaces/new'
+end
+
+#GET FAVORITES
+get '/spaces/favorites' do
+  erb :'spaces/favorites'
 end
 
 #GET ID
@@ -61,6 +65,7 @@ get '/users/:id/login' do
   redirect '/'
 end
 
+#LOGOUT
 get '/logout' do
   session[:user_id] = nil
   redirect '/'
