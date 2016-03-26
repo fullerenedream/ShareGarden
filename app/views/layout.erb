@@ -45,7 +45,10 @@
 
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right text-center">
-        <button class="navbar-btn btn btn-primary outline" type="button" aria-label="Left Align" data-toggle="modal" data-target=".list-space-modal">List your space</button>
+        <!-- ONLY SHOW THE LIST BUTTON IF THERE IS A USER LOGGED IN -->
+        <% if current_user %>
+          <button class="navbar-btn btn btn-primary outline" type="button" aria-label="Left Align" data-toggle="modal" data-target=".list-space-modal">List your space</button>
+        <% end %>
         <!--/. DEFAULT ACTION WHEN CLICKING LOGIN BUTTON IS TO LOG IN AS USER_ID 1 -->
         <% if current_user.nil? %>
           <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/users/1/login">Login</a>
