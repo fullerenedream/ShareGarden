@@ -50,6 +50,7 @@ end
 
 #GET FAVORITES
 get '/spaces/favorites' do
+  @user = current_user
   erb :'spaces/favorites'
 end
 

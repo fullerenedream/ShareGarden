@@ -1,14 +1,15 @@
-<% @user.each do |space| %>
+<% @user.favorites.each do |favorite| %>
+  <% @space = favorite.space %>
   <div class="space">
-    <h3><a href="/spaces/<%= space.id %>"><%= space.user.email %></a></h3>
+    <h3><a href="/spaces/<%= @space.id %>"><%= @space.user.email %></a></h3>
     <p>
       <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
     </p>
     <p>
-      Garden Space in m<SUP>2</SUP>: <%= @space.square_meters %>
+      Garden Plot Area in m<SUP>2</SUP>: <%= @space.square_meters %>
     </p>
     <p>
-      <%= space.description %>
+      <%= @space.description %>
     </p>
     <img src="/uploads/<%=@space.main_photo%>">
     <hr>
