@@ -15,7 +15,7 @@
     <!-- Filter Options -->
     <div class="row space-bottom">
       <div class="filter-bar">
-        <form class="form-inline" action="/spaces">
+        <form action="/spaces/search">
           <div class="col-md-1 text-center">
             <p>Search by:</p>
           </div>
@@ -38,15 +38,16 @@
             </div>
           </div>
           <div class="col-md-1 text-center">
-            <div class="form-group">
-              <label for="area">Plot Area</label>
-              <input type="text" name="area" size="5" class="form-control" id="area">
+            <label for="area">Plot Area</label>
+            <div class="input-group">
+              <input type="text" name="area" size="3" class="form-control" aria-describedby="unit" id="area">
+              <span class="input-group-addon" id="unit">m²</span>
             </div>
           </div>
           <div class="col-md-2 text-center mid-75">
             <div class="form-group" id="radioset">
-              <input type="radio" id="radio1" name="radio"><label for="radio1">Indoor</label>
-              <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Outdoor</label>
+              <input type="radio" id="radio1" name="radio" value = "false"><label for="radio1">Indoor</label>
+              <input type="radio" id="radio2" name="radio" value = "true"><label for="radio2">Outdoor</label>
             </div>
           </div>
           <div class="col-md-1 text-center mid-75">

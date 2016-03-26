@@ -23,6 +23,26 @@ get '/spaces' do
     @spaces = Space.where("unit_number LIKE ? OR street_address LIKE ? OR province LIKE ? OR postal_code LIKE ? OR city LIKE ? OR country LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
   else
     @spaces = Space.all
+  end 
+  erb :'spaces/index'
+end
+
+get '/spaces/search' do
+  @spaces = Space.all
+  if params[:country]
+    @spaces = @spaces.where("country LIKE ?", "%#{params[:country]}%") unless params[:country]==""
+  end
+  if params[:province]
+    @spaces = @spaces.where("province LIKE ?", "%#{params[:province]}") unless params[:province]==""
+  end
+  if params[:city]
+    @spaces = @spaces.where("city LIKE ?", "%#{params[:city]}%") unless params[:city]==""
+  end
+  if params[:area]
+    @spaces = @spaces.where("square_meters >= ?", params[:area]) unless params[:area]==""
+  end
+  if params[:radio]
+    @spaces = @spaces.where(outdoors: params[:radio] == 'true') unless params[:radio]==""
   end
   erb :'spaces/index'
 end
@@ -50,15 +70,11 @@ post '/spaces' do
   if @space.save
     redirect '/'
   else
-    erb :'spaces/new'
+    erb :'/'
   end
 end
 
 #GET NEW
-
-get '/spaces/new' do
-  erb :'spaces/new'
-end
 
 #GET ID
 get '/spaces/:id' do
