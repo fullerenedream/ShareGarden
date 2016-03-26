@@ -170,3 +170,7 @@ body{
     height: 200px;
 }
 
+.input-group-addon{
+    max-width: 42px;
+}
+
