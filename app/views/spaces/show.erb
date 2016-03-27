@@ -1,19 +1,51 @@
-<h3><a href="/spaces/<%= @space.id %>"><%= @space.user.email %></a></h3>
-<p>
-  <%= @space.user.username %>
-</p>
-<p>
-  Garden Space in m<SUP>2</SUP>: <%= @space.square_meters %>
-</p>
-<p>
-  <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
-</p>
 
-<p>
-  <%= @space.description %>
-</p>
+<div class="container-fluid">
+  <div class="jumbotron">
 
-<img src="..<%=@space.main_photo%>.jpg">
+    <div class="col-md-8 jumbo-extend no-padding">
+      <div class="listing-pic" style="background: url(..<%=@space.main_photo%>.jpg) no-repeat cover;">img</div>
+    </div>
 
-<hr/>
-<a href="/">Back to Spaces</a>
+    <div class="col-md-4 jumbo-extend no-padding">
+      <iframe
+      class="hidden-xs hidden-sm"
+      frameborder="0"
+      style="border:0"
+      scrolling="no"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAfYEGi8MUrEjoJtokJgG9VK2VZ7wjkfl4&q=<%= @space.street_address %>,+<%= @space.city %>,+<%= @space.province %>,+<%= @space.country %>" allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>
+
+<div id="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Details</h2>
+        <p>
+          <br>
+          <span class="highlight"><%= @space.outdoors ? "Outdoor" : "Indoor" %></span><span class="highlight"><%= @space.square_meters %> m<sup>2</sup></span><br>
+          <%= @space.description %>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-6"><h2>Location</h2></div>
+          <div class="col-md-6 text-left ">
+            <% if current_user.nil? %>
+                <a class="btn btn-primary outline space-top" href="/users/1/login">Login</a>
+            <% else %>
+                <a class="btn btn-primary outline space-top" href="mailto:<%= @space.user.email %>">Inquire</a>
+            <% end %><br><br></div>
+          </div>
+        <p>
+          <%= @space.unit_number %> <%= @space.street_address %><br>
+          <%= @space.city %>, <%= @space.province %>, <%= @space.postal_code %><br>
+          <%= @space.country %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
