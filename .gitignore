@@ -2,3 +2,4 @@
 .bundle
 .DS_Store
 public/assets
+db/db.sqlite3

@@ -51,9 +51,9 @@ post '/spaces' do
     main_photo: '/uploads/' + @random_name
   )
   if @space.save
-    redirect '/'
+    redirect '/success.html'
   else
-    erb :'/'
+    redirect '/error.html'
   end
 end
 
