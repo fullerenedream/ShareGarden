@@ -69,19 +69,19 @@
   <!-- /.MAIN CONTAINER -->
 
   <!-- POST MODAL -->
-  <div class="modal fade list-space-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal fade list-space-modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">New Listing</h4>
+          <h4 class="modal-title" id="ModalLabel">New Listing</h4>
         </div>
-        <form data-toggle="validator" role="form" method="post" action="/spaces" enctype='multipart/form-data'>
+        <form role="form" data-toggle="validator" method="post" action="/spaces" enctype='multipart/form-data'>
           <div class="modal-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group has-feedback">
-                  <label for="square_meters">Plot Area M<SUP>2</SUP>:</label>
+                  <label for="square_meters">Plot Area m<SUP>2</SUP></label>
                   <input class="form-control" id="square_meters" type="float" name="square_meters" value="<%= @space && @space.square_meters %>"required>
                 </div>
               </div>
@@ -123,7 +123,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group has-feedback">
-                  <label for="country">Country:</label>
+                  <label for="country">Country</label>
                   <input class="form-control" type="text" id="country" name="country" value="<%= @space && @space.country %>"required>
                 </div>
               </div>
@@ -144,7 +144,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Post</button>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Post</button>
+            </div>
           </div>
         </form>
       </div>

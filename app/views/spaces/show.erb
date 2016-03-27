@@ -1,17 +1,41 @@
-<%= @space.user.try(:email) %>
-<p>
-  Garden Space in m<SUP>2</SUP>: <%= @space.square_meters %>
-</p>
+<div class="container-fluid">
+  <div class="jumbotron">
 
-<p>
-  <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
-</p>
+    <div class="col-md-8 jumbo-extend no-padding">
+      <div class="listing-pic" style="background: url(..<%=@space.main_photo%>.jpg) no-repeat cover;">img</div>
+    </div>
 
-<p>
-  <%= @space.description %>
-</p>
+    <div class="col-md-4 jumbo-extend no-padding">
+      <iframe
+      frameborder="0"
+      style="border:0"
+      scrolling="no"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAfYEGi8MUrEjoJtokJgG9VK2VZ7wjkfl4&q=<%= @space.street_address %>,+<%= @space.city %>,+<%= @space.province %>,+<%= @space.country %>" allowfullscreen>
+      </iframe>
+    </div>
 
-<img src="..<%=@space.main_photo%>.jpg">
+  </div>
+</div>
 
-<hr/>
-<a href="/">Back to Spaces</a>
+<div id="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Details</h2>
+        <p>
+          <span class="highlight"><%= @space.outdoors ? "Outdoor" : "Indoor" %></span>
+          Garden Space in m<SUP>2</SUP>: <%= @space.square_meters %>
+          <%= @space.description %>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h2>Location</h2>
+        <p>
+          <%= @space.unit_number %> <%= @space.street_address %><br>
+          <%= @space.city %>, <%= @space.province %>, <%= @space.postal_code %><br>
+          <%= @space.country %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
