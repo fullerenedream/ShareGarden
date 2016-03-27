@@ -40,7 +40,7 @@ body{
 
 .btn-primary.outline {
     border: 2px solid;
-    color: #009688;
+    color: #268bcb;
     background: none;
     border-radius: 0;
     text-shadow: none;
@@ -52,9 +52,9 @@ body{
 
 .outline:hover, .outline:active, .outline:focus {
     color: #fafafa;
-    border-color: #009688;
+    border-color: #268bcb;
     border-radius: 0;
-    background: none #009688;
+    background: none #268bcb;
 }
 
 .invisible-btn{
@@ -139,7 +139,7 @@ body{
     top: 0px;
     font-weight: 400;
     color: #fafafa;
-    background: #009688;
+    background: #268bcb;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 1px 1px #046b60;
@@ -198,7 +198,7 @@ body{
     margin:10px;
     font-weight: 400;
     color: #fafafa;
-    background: #009688;
+    background: #268bcb;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 1px 1px #046b60;
