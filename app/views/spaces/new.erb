@@ -32,8 +32,7 @@
     <input type="text" id="description" name="description" value="<%= @space && @space.description %>">
   </div>
   <div class="form-group">
-    <input type="radio" checked="checked" name="outdoors" value="false" <%= (@space && (@space.outdoors == false) ? "checked" : "" ) %> >Indoors
-    <input type="radio" name="outdoors" value="true" <%= (@space && (@space.outdoors == true) ? "checked" : "" ) %> >Outdoors
+
   </div>
   <div class="form-group">
     <input type="file" name="uploaded_picture" size="2000000">
