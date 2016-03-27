@@ -63,7 +63,7 @@
       <div class="col-lg-4">
         <a href="/spaces/<%= space.id %>">
           <div class="listing-box">
-            <div class="indicator"><%= @space.outdoors ? "Outdoor" : "Indoor" %></div>
+            <div class="indicator"><%= space.outdoors ? "Outdoor" : "Indoor" %></div>
             <div class="fav-icon"><span class="glyphicon glyphicon-star"></span></div>
             <div class="box-image" style="background: url(<%=space.main_photo%>.jpg) center no-repeat">&nbsp;</div>
             <h3><%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %></h3>
