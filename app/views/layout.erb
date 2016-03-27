@@ -80,77 +80,14 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">New Listing</h4>
         </div>
-        <form data-toggle="validator" role="form" method="post" action="/spaces" enctype='multipart/form-data'>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="square_meters">Plot Area m<SUP>2</SUP>:</label>
-                  <input class="form-control" id="square_meters" type="float" name="square_meters" value="<%= @space && @space.square_meters %>"required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="unit_number">Unit Number</label>
-                  <input class="form-control" id="unit_number" type="text" name="unit_number" value="<%= @space && @space.unit_number %>"required>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="street_address">Street Address</label>
-                  <input class="form-control" id="street_address" type="text" name="street_address" value="<%= @space && @space.street_address %>"required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="city">City</label>
-                  <input class="form-control" id="city" type="text" name="city" value="<%= @space && @space.city %>"required>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="province">Province/State</label>
-                  <input class="form-control" type="text" id="province" name="province" value="<%= @space && @space.province %>"required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="postal_code">Postal Code</label>
-                  <input class="form-control" type="text" id="postal_code" name="postal_code" value="<%= @space && @space.postal_code %>"required>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group has-feedback">
-                  <label for="country">Country:</label>
-                  <input class="form-control" type="text" id="country" name="country" value="<%= @space && @space.country %>"required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="radio" checked="checked" name="outdoors" value="true" <%= (@space && (@space.outdoors == true) ? "checked" : "" ) %> > Outdoor
-                  <input type="radio" name="indoors" value="false" <%= (@space && (@space.outdoors == false) ? "checked" : "" ) %> > Indoor
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-              <textarea class="form-control" id="description" name="description" value="<%= @space && @space.description %>"></textarea>
-            </div>
-            <div class="form-group has-feedback">
-              <label for="upload">Upload Picture</label>
-              <input class="form-control" id="upload" type="file" name="uploaded_picture" size="2000000"required>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Post</button>
-          </div>
-        </form>
+        <div>
+          <iframe
+            frameborder="0"
+            style="border:0; width:100%; height: 100%; min-height: 700px;"
+            scrolling="yes"
+            src="/post.html">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -158,8 +95,8 @@
 
 <!-- JS Files (at the end for faster loading, ORDER MATTERS) -->
 <script src="/javascript/jquery-2.2.2.min.js"></script>
+<script src="/BootstrapValidator.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script src="/bootstrap/js/validator.js"></script>
 <script src="/jquery-ui/jquery-ui.js"></script>
 <script src="/javascript/application.js"></script>
 
