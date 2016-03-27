@@ -15,7 +15,7 @@
     <!-- Filter Options -->
     <div class="row space-bottom">
       <div class="filter-bar">
-        <form action="/spaces/search">
+        <form action="/">
           <div class="col-md-1 text-center">
             <p>Search by:</p>
           </div>
@@ -61,15 +61,15 @@
       <!-- Boxes -->
       <% @spaces.each do |space| %>
       <div class="col-lg-4">
-        <a href="/spaces/<%= space.id %>">
           <div class="listing-box">
             <div class="indicator"><%= space.outdoors ? "Outdoor" : "Indoor" %></div>
             <div class="fav-icon"><span class="glyphicon glyphicon-star"></span></div>
-            <div class="box-image" style="background: url(<%=space.main_photo%>.jpg) center no-repeat">&nbsp;</div>
-            <h3><%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %> <%= space.country %> <%= space.postal_code %></h3>
-            <div class="text-right area"><p><%= space.square_meters %> m<sup>2</sup></p></div>
+            <a href="/spaces/<%= space.id %>?space=<%=space.id%>">
+              <div class="box-image" style="background: url(<%=space.main_photo%>.jpg) center no-repeat">&nbsp;</div>
+              <h3><%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %> <%= space.country %> <%= space.postal_code %></h3>
+            </a>
+            <div class="area"><p class="text-right"><%= space.square_meters %> m<sup>2</sup></p></div>
           </div>
-        </a>
       </div>
       <% end %>
 
