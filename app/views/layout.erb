@@ -129,8 +129,8 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="radio" checked="checked" name="outdoors" value="false" <%= (@space && (@space.outdoors == false) ? "checked" : "" ) %> > Indoors
-                  <input type="radio" name="outdoors" value="true" <%= (@space && (@space.outdoors == true) ? "checked" : "" ) %> > Outdoors
+                  <input type="radio" checked="checked" name="outdoors" value="true" <%= (@space && (@space.outdoors == true) ? "checked" : "" ) %> > Outdoor
+                  <input type="radio" name="indoors" value="false" <%= (@space && (@space.outdoors == false) ? "checked" : "" ) %> > Indoor
                 </div>
               </div>
             </div>
