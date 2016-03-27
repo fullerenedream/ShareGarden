@@ -13,4 +13,25 @@ $(document).ready(function() {
         }
     );
 
+    
+    $( ".glyphicon" ).click(function(){
+        $(this).toggleClass("yellow");
+        /*var data = "1"
+        $.ajax({
+            type: "GET",
+            url: '/spaces/addfavorites',
+            data: JSON.stringify(data),
+            contentType: 'json',
+            success: function(data) {
+                alert("yay");
+            },
+            error: function(err, response){
+                alert(err);
+            },
+            dataType: 'json'
+        });*/
+
+        
+    });
+
 });

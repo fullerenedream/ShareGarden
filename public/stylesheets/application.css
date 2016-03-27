@@ -174,3 +174,16 @@ body{
     max-width: 42px;
 }
 
+.glyphicon{
+    color:#999999;
+    cursor:pointer;
+}
+
+.glyphicon.yellow{
+    color:#FFFF00;
+}
+
+.area p{
+    float:right;
+    width:50px;
+}
