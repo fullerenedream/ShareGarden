@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    // jQuery UI
     $( "#button" ).button();
     $( "#radioset" ).buttonset();
 
@@ -13,7 +14,8 @@ $(document).ready(function() {
         }
     );
 
-    
+
+    // Star
     $( ".glyphicon" ).click(function(){
         $(this).toggleClass("yellow");
         /*var data = "1"
