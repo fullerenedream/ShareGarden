@@ -6,30 +6,12 @@ helpers do
   end
 end
 
-
-# Homepage (Root path)
 get '/' do
   @spaces = Space.all
-  erb :index
-end
-
-# CALLED THE DIRECTORY SPACES FOR NOW, CHANGE LATER WHEN WE COME UP WITH A NAME
-# ALSO CALLED THE INNER DIRECTORY ID, CHANGE LATER WHEN WE COME UP WITH A NAME
-# Spaces GET
-
-# Spaces GET
-get '/spaces' do
   if params[:search]
     search_term = params[:search]
-    @spaces = Space.where("unit_number LIKE ? OR street_address LIKE ? OR province LIKE ? OR postal_code LIKE ? OR city LIKE ? OR country LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
-  else
-    @spaces = Space.all
+    @spaces = @spaces.where("unit_number LIKE ? OR street_address LIKE ? OR province LIKE ? OR postal_code LIKE ? OR city LIKE ? OR country LIKE ? OR description LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
   end 
-  erb :'spaces/index'
-end
-
-get '/spaces/search' do
-  @spaces = Space.all
   if params[:country]
     @spaces = @spaces.where("country LIKE ?", "%#{params[:country]}%") unless params[:country]==""
   end
@@ -45,7 +27,7 @@ get '/spaces/search' do
   if params[:radio]
     @spaces = @spaces.where(outdoors: params[:radio] == 'true') unless params[:radio]==""
   end
-  erb :'spaces/index'
+  erb :index
 end
 
 # Spaces New POST
@@ -75,6 +57,14 @@ post '/spaces' do
   end
 end
 
+# get '/spaces/addfavorites' do
+#   if current_user.favorites.find(params[:space])
+#     current_uesr.favorites.find(params[:space]).delete
+#   else
+#     Favorite.create(user_id: current_user, space_id: params[:space])
+#   end
+# end
+
 #GET FAVORITES
 get '/spaces/favorites' do
   @user = current_user
@@ -98,3 +88,5 @@ get '/logout' do
   session[:user_id] = nil
   redirect '/'
 end
+
+#<%= 'yellow' if current_user.favorites.find(params[:space]) %>
