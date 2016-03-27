@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- CSS Files (order matters) -->
+        <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> <!-- font-family: 'Poiret One', sans-serif; -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'> <!-- font-family: 'Roboto', sans-serif; -->
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/stylesheets/application.css">
+        <link rel="stylesheet" href="/jquery-ui/jquery-ui.css">
+        <link rel="stylesheet" href="/jquery-ui/jquery-ui.theme.css">
+    </head>
+    <body>
+    <div class="container-fluid">
+        <form id="listform" action="/spaces" method="post" role="form" data-toggle="validator" enctype='multipart/form-data'>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="square_meters">Plot Area m<SUP>2</SUP>:</label>
+                            <input class="form-control" id="square_meters" type="float" name="square_meters" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="unit_number">Unit Number</label>
+                            <input class="form-control" id="unit_number" type="text" name="unit_number"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="street_address">Street Address</label>
+                            <input class="form-control" id="street_address" type="text" name="street_address" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="city">City</label>
+                            <input class="form-control" id="city" type="text" name="city" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="province">Province/State</label>
+                            <input class="form-control" type="text" id="province" name="province" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="postal_code">Postal Code</label>
+                            <input class="form-control" type="text" id="postal_code" name="postal_code" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label for="country">Country:</label>
+                            <input class="form-control" type="text" id="country" name="country" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="radio" checked="checked" name="outdoors" value="true" /> Outdoor
+                            &nbsp;
+                            <input type="radio" name="indoors" value="false" /> Indoor
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group has-feedback">
+                            <label for="upload">Upload Picture</label>
+                            <input class="form-control" id="upload" type="file" name="uploaded_picture" size="2000000" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group text-right">
+                            <button type="submit" name="submit" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+        <!-- JS Files (at the end for faster loading, ORDER MATTERS) -->
+        <script src="/javascript/jquery-2.2.2.min.js"></script>
+        <script src="/BootstrapValidator.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/jquery-ui/jquery-ui.js"></script>
+        <script src="/javascript/application.js"></script>
+    </body>
+</html>
