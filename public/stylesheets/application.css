@@ -24,6 +24,10 @@ body{
     padding: 0;
 }
 
+.space-top{
+    margin-top: 20px;
+}
+
 .space-bottom{
     margin-bottom: 20px;
 }
@@ -174,3 +178,28 @@ body{
     max-width: 42px;
 }
 
+.jumbo-extend{
+    height:100%;
+}
+
+.jumbo-extend iframe{
+    height: 100%;
+    width: 100%;
+}
+
+.listing-pic{
+    height: 100%;
+    width: 100%;
+    background-color: #0f0f0f;
+    background-repeat: no-repeat;
+}
+
+.highlight{
+    margin:10px;
+    font-weight: 400;
+    color: #fafafa;
+    background: #009688;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px #046b60;
+}
