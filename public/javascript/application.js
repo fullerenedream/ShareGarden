@@ -16,6 +16,36 @@ $(document).ready(function() {
     
     $( ".glyphicon" ).click(function(){
         $(this).toggleClass("yellow");
+        if ($(this).hasClass("yellow")) {
+            $.ajax({
+                type: "POST",
+                url: '/spaces/addfavorites/'+$(this).attr("id")+"/1",
+                data: 1,
+                contentType: 'json',
+                success: function(){
+                    //
+                },
+                error: function(){
+                    //
+                },
+                dataType: 'json'
+            });
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: '/spaces/addfavorites/'+$(this).attr("id")+"/0",
+                data: 0,
+                contentType: 'json',
+                success: function(){
+                    //
+                },
+                error: function(){
+                    //
+                },
+                dataType: 'json'
+            });
+        }
         /*var data = "1"
         $.ajax({
             type: "GET",
@@ -29,9 +59,7 @@ $(document).ready(function() {
                 alert(err);
             },
             dataType: 'json'
-        });*/
-
-        
+        });*/        
     });
 
 });

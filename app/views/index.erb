@@ -17,7 +17,7 @@
       <div class="filter-bar">
         <form action="/">
           <div class="col-md-1 text-center">
-            <p>Search by:</p>
+            <p id="searchby">Search by:</p>
           </div>
           <div class="col-md-2">
             <div class="form-group text-center">
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="col-md-1 text-center mid-75">
-              <button class="btn btn-primary outline" type="submit">Filter</button>
+              <button id="filterbutton" class="btn btn-primary outline" type="submit">Filter</button>
           </div>
         </form>
       </div>
@@ -63,10 +63,10 @@
       <div class="col-lg-4">
           <div class="listing-box">
             <div class="indicator"><%= space.outdoors ? "Outdoor" : "Indoor" %></div>
-            <div class="fav-icon"><span class="glyphicon glyphicon-star"></span></div>
+            <div class="fav-icon"><span id="<%=space.id%>" class="glyphicon glyphicon-star <%=current_user.favorites.where(space_id: space.id).empty? ? '' : 'yellow'%>"></span></div>
             <a href="/spaces/<%= space.id %>?space=<%=space.id%>">
               <div class="box-image" style="background: url(<%=space.main_photo%>.jpg) center no-repeat">&nbsp;</div>
-              <h3><%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %> <%= space.country %> <%= space.postal_code %></h3>
+              <h3><%= space.unit_number %> <%= space.street_address %> <%= space.city %> <%= space.province %></h3>
             </a>
             <div class="area"><p class="text-right"><%= space.square_meters %> m<sup>2</sup></p></div>
           </div>
