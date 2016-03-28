@@ -1,21 +1,16 @@
 <% @user.favorites.each do |favorite| %>
   <% @space = favorite.space %>
-  <div class="space">
-    <h3><a href="/spaces/<%= @space.id %>"><%= @space.user.email %></a></h3>
-    <p>
-      <%= @space.user.username %>
-    </p>
-    <p>
-      <%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %> <%= @space.country %> <%= @space.postal_code %>
-    </p>
-    <p>
-      Garden Plot Area in m<SUP>2</SUP>: <%= @space.square_meters %>
-    </p>
-    <p>
-      <%= @space.description %>
-    </p>
-    <img src="..<%=@space.main_photo%>.jpg">
-    <hr>
+  <div class="col-lg-4">
+      <div class="listing-box">
+        <div class="indicator"><%= @space.outdoors ? "Outdoor" : "Indoor" %></div>
+        <% if current_user %>
+          <div class="fav-icon"><span id="<%=@space.id%>" class="glyphicon glyphicon-star <%=current_user.favorites.where(space_id: @space.id).empty? ? '' : 'yellow'%>"></span></div>
+        <% end %>
+        <a href="/spaces/<%= @space.id %>?space=<%=@space.id%>">
+          <div class="box-image" style="background: url(<%=@space.main_photo%>.jpg) center no-repeat">&nbsp;</div>
+          <h3><%= @space.unit_number %> <%= @space.street_address %> <%= @space.city %> <%= @space.province %></h3>
+        </a>
+        <div class="area"><p class="text-right"><%= @space.square_meters %> m<sup>2</sup></p></div>
+      </div>
   </div>
 <% end %>
-<a href="/spaces">Back to Spaces</a>

@@ -51,7 +51,7 @@
         <% end %>
         <!-- ONLY SHOW THE FAVORITES BUTTON IF THERE IS A USER LOGGED IN -->
         <% if current_user %>
-          <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/">Favorites</a>
+          <a class="navbar-btn btn btn-primary outline" aria-label="Left Align" href="/spaces/favorites">Favorites</a>
         <% end %>
         <!--/. DEFAULT ACTION WHEN CLICKING LOGIN BUTTON IS TO LOG IN AS USER_ID 1 -->
         <% if current_user.nil? %>
