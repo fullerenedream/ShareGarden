@@ -24,8 +24,12 @@ get '/' do
   if params[:area]
     @spaces = @spaces.where("square_meters >= ?", params[:area]) unless params[:area]==""
   end
-  if params[:radio]
-    @spaces = @spaces.where(outdoors: params[:radio] == 'true') unless params[:radio]==""
+  if params[:outdoor] || params[:indoor]
+    is_outdoor = params[:outdoor] == 'true'
+    is_both = true if params[:outdoor] == 'true' && params[:indoor] == 'true'
+    unless is_both
+      @spaces = @spaces.where(outdoors: is_outdoor) unless params[:radio]==""
+    end
   end
   erb :index
 end
