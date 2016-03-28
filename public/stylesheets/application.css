@@ -217,3 +217,19 @@ body{
     float:right;
     width:50px;
 }
+
+#area {
+    min-width:50px;
+}
+
+#radioset {
+    min-width:200px;
+}
+
+#filterbutton {
+    margin-left:30px;
+}
+
+#searchby {
+    min-width:90px;
+}

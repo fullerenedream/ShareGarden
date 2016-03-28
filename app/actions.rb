@@ -57,13 +57,19 @@ post '/spaces' do
   end
 end
 
-# get '/spaces/addfavorites' do
-#   if current_user.favorites.find(params[:space])
-#     current_uesr.favorites.find(params[:space]).delete
-#   else
-#     Favorite.create(user_id: current_user, space_id: params[:space])
-#   end
-# end
+post '/spaces/addfavorites/:id/:flag' do
+  if params[:flag]=='0'
+    @favspaces = current_user.favorites.where(space_id: params[:id])
+    @favspaces.each do |space|
+      space.destroy
+    end
+  else
+    Favorite.create(user_id: current_user.id, space_id: params[:id])
+  end
+  content_type :json
+  {}.to_json
+
+end
 
 #GET FAVORITES
 get '/spaces/favorites' do
@@ -88,5 +94,3 @@ get '/logout' do
   session[:user_id] = nil
   redirect '/'
 end
-
-#<%= 'yellow' if current_user.favorites.find(params[:space]) %>
